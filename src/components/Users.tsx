@@ -1,14 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { deleteLocalUserQuery, fetchLocalUserQuery, postLocalUserQuery } from "../queries/Queries";
 
-export const Users = () => {
+interface User {
+  id: string,
+  name: string,
+  age: number,
+  email: string
+}
+
+export const Users: React.FC = () => {
 
   const { data, isError, isFetching, isLoading } = fetchLocalUserQuery();
   const localUserMutation = postLocalUserQuery();
   const { isSuccess, mutate } = deleteLocalUserQuery();
-  const initialUser = {};
+  const initialUser: User = {
+    id: '',
+    name: '',
+    age: 0,
+    email: ''
+  };
   const [localUser, setLocalUser] = useState(initialUser);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     if (data) {
@@ -29,9 +41,9 @@ export const Users = () => {
   }
 
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event?.target
-    const isPresent = data.find(user => user.name.toLowerCase() === value.toLowerCase());
+    const isPresent = data?.find(user => user.name.toLowerCase() === value.toLowerCase());
     setLocalUser({ ...localUser, [name]: value })
     if (isPresent) {
       setLocalUser({ ...localUser, [name]: '' })
@@ -39,12 +51,13 @@ export const Users = () => {
     }
   }
 
-  const addLocalUser = () => {
+  const addLocalUser = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     localUserMutation.mutate(localUser)
     setLocalUser(initialUser)
   }
 
-  const removeItem = (id) => {
+  const removeItem = (id: string) => {
     mutate(id);
     if (isSuccess) {
       alert("Success Bro!!!")
@@ -53,8 +66,11 @@ export const Users = () => {
 
 
   return (
-    <div className="w-screen h-screen gap-3 flex items-center justify-center flex-col">
-      {users?.map((item, index) => {
+    <form onSubmit={(event) => addLocalUser(event)} className="gap-3 flex items-center justify-center flex-col">
+      {isLoading && <div>Loading...</div>}
+      {isError && <div>Error...</div>}
+      {isFetching && <div>Fetching...</div>}
+      {users?.map((item: User, index: number) => {
         return (
           <div key={index} className="flex items-center w-56 justify-between gap-y-72">
             <p>{item?.name} - {item?.age}</p>
@@ -67,15 +83,10 @@ export const Users = () => {
         <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="text" name="name" value={localUser?.name} onChange={handleChange} />
         <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="number" name="age" onChange={handleChange} value={localUser?.age} />
         <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="email" name="email" onChange={handleChange} value={localUser?.email} />
-        {/* <button className="bg-slate-400 focus:outline-none text-white opacity-70 outline-none scale-90 hover:opacity-100 border-none transition-all">Add Local User</button>
-
-        <button className="bg-slate-400 focus:outline-none focus-within:scale-95 text-white opacity-70 outline-none border-none transition-all hover:opacity-100 hover:scale-100 active:scale-110 active:transition-transform duration-150">Add Local User</button> */}
-
-
-        <button className="bg-slate-400 focus:outline-none text-white opacity-70 outline-none border-none transition-transform duration-150 hover:opacity-100 hover:scale-105 active:scale-95" onClick={addLocalUser}>Add Local User</button>
+        <button className="bg-slate-400 focus:outline-none text-white opacity-70 outline-none border-none transition-transform duration-150 hover:opacity-100 hover:scale-105 active:scale-95" type="submit">Add Local User</button>
 
 
       </div>
-    </div>
+    </form>
   )
 }

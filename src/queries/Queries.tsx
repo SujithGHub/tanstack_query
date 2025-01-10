@@ -21,10 +21,16 @@ import { deleteLocalUser, fetchAllUsersFromLocalServer, postLocalUser } from "..
 //         queryFn: fetchAllPosts,
 //     })
 // }
+interface User {
+    id: string,
+    name: string,
+    age: number,
+    email: string
+}
 
 
 export const fetchLocalUserQuery = () => {
-    return useQuery({
+    return useQuery<User[]>({
         queryKey: ['local-user'],
         queryFn: fetchAllUsersFromLocalServer,
         staleTime: 3000,
@@ -41,10 +47,10 @@ export const postLocalUserQuery = () => {
     })
 }
 
-export const deleteLocalUserQuery = (user_id) => {
+export const deleteLocalUserQuery = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationKey: ['delete-user', user_id],
+        mutationKey: ['delete-user'],
         mutationFn: deleteLocalUser,
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ['local-user'] })
     })

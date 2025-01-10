@@ -1,5 +1,11 @@
-import axios from "axios"
-import axiosInstance from "./Interceptor"
+import axiosInstance from "./Interceptor";
+
+interface User {
+    id: string,
+    name: string,
+    age: number,
+    email: string
+}
 
 // export const getAllUsers = async () => {
 //     return (await axios.get('https://jsonplaceholder.typicode.com/users')).data.map(result => result)
@@ -22,12 +28,12 @@ export const fetchAllUsersFromLocalServer = async () => {
     return response.data;
 }
 
-export const postLocalUser = async (newUser) => {
+export const postLocalUser = async (newUser: User) => {
     const response = await axiosInstance.post('/user', newUser);
     return response?.data;
 }
 
-export const deleteLocalUser = async (user_id) => {
+export const deleteLocalUser = async (user_id: string) => {
     const response = await axiosInstance.delete(`/user/${user_id}`);
     console.log(response, "delete_response");
     return response.data;

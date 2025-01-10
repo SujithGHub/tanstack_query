@@ -1,5 +1,30 @@
 {
-  "user": [],
+  "user": [
+    {
+      "id": "e524",
+      "name": "Bharani",
+      "age": "35",
+      "email": "bharani@yopmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Raj Kumar",
+      "age": "26",
+      "email": "rajkumarsp@gmail.com"
+    },
+    {
+      "id": "",
+      "name": "Sujith",
+      "age": "26",
+      "email": "sujithssbsoft@gmail.com"
+    },
+    {
+      "id": "",
+      "name": "Subash",
+      "age": "33",
+      "email": "subash@gmail.com"
+    }
+  ],
   "post": [
     {
       "id": "1",
