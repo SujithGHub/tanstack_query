@@ -40,11 +40,11 @@ const Sidebar = ({ open, handleClick }) => {
         {!open && <span>Use State</span>}
       </button>
       <button className={isActive('use-context') ? 'active-button' : ''} onClick={() => navigate('use-context')}>
-        <i class="fa-brands fa-contao"></i>
+        <i className="fa-brands fa-contao"></i>
         {!open && <span>Use Context</span>}
       </button>
       <button className={isActive('use-ref') ? 'active-button' : ''} onClick={() => navigate('use-ref')}>
-        <i class="fa-brands fa-contao"></i>
+        <i className="fa-brands fa-contao"></i>
         {!open && <span>Use Ref</span>}
       </button>
     </div>

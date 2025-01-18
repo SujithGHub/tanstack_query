@@ -70,7 +70,7 @@ export const Users: React.FC = () => {
       {isLoading && <div>Loading...</div>}
       {isError && <div>Error...</div>}
       {isFetching && <div>Fetching...</div>}
-      {users?.map((item: User, index: number) => {
+      {users && users?.map((item: User, index: number) => {
         return (
           <div key={index} className="flex items-center w-56 justify-between gap-y-72">
             <p>{item?.name} - {item?.age}</p>
