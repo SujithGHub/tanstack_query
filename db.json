@@ -1,38 +1,162 @@
 {
   "user": [
     {
-      "id": "1",
+      "id": "1737979303346",
       "name": "Sujith",
-      "age": "27",
+      "age": "26",
       "email": "sujithssbsoft@gmail.com"
-    },
-    {
-      "id": "2",
-      "name": "Subash",
-      "age": "24",
-      "email": "subash@gmail.com"
     }
   ],
-  "post": [
+  "posts": [
     {
-      "id": "1",
-      "title": "post1",
-      "description": "Post 1 Description"
+      "id": 1,
+      "title": "Exploring Nature",
+      "description": "A deep dive into the beauty and tranquility of nature."
     },
     {
-      "id": "2",
-      "title": "post2",
-      "description": "Post 2 Description"
+      "id": 2,
+      "title": "Tech Trends 2025",
+      "description": "An analysis of emerging technologies and their potential impact."
     },
     {
-      "id": "3",
-      "title": "post3",
-      "description": "Post 3 Description"
+      "id": 3,
+      "title": "Healthy Eating Habits",
+      "description": "Practical tips to maintain a balanced and nutritious diet."
     },
     {
-      "id": "4",
-      "title": "post4",
-      "description": "Post 4 Description"
+      "id": 4,
+      "title": "Travel Destinations for 2025",
+      "description": "Top ten places to add to your travel bucket list this year."
+    },
+    {
+      "id": 5,
+      "title": "Mindfulness Practices",
+      "description": "Learn how to cultivate mindfulness and enhance your well-being."
+    },
+    {
+      "id": 6,
+      "title": "The World of AI",
+      "description": "Exploring the capabilities and ethical implications of artificial intelligence."
+    },
+    {
+      "id": 7,
+      "title": "Fitness Routines",
+      "description": "Effective workout plans for different fitness levels."
+    },
+    {
+      "id": 8,
+      "title": "Home Decor Ideas",
+      "description": "Simple and creative ideas to beautify your living space."
+    },
+    {
+      "id": 9,
+      "title": "The History of Art",
+      "description": "An exploration of artistic movements and their cultural significance."
+    },
+    {
+      "id": 10,
+      "title": "Mastering Photography",
+      "description": "Tips and tricks to capture stunning photos with any camera."
+    },
+    {
+      "id": 11,
+      "title": "Financial Freedom",
+      "description": "How to create a budget and achieve financial independence."
+    },
+    {
+      "id": 12,
+      "title": "Gardening Basics",
+      "description": "A beginner's guide to growing your own plants and vegetables."
+    },
+    {
+      "id": 13,
+      "title": "Productivity Hacks",
+      "description": "Simple strategies to stay focused and get more done."
+    },
+    {
+      "id": 14,
+      "title": "Space Exploration",
+      "description": "The latest advancements and missions in space exploration."
+    },
+    {
+      "id": 15,
+      "title": "The Psychology of Happiness",
+      "description": "Understanding what makes people happy and how to achieve it."
+    },
+    {
+      "id": 16,
+      "title": "Cooking for Beginners",
+      "description": "Easy recipes and tips for anyone new to cooking."
+    },
+    {
+      "id": 17,
+      "title": "Starting a Small Business",
+      "description": "Key steps and advice for aspiring entrepreneurs."
+    },
+    {
+      "id": 18,
+      "title": "The Science of Sleep",
+      "description": "Why sleep is important and how to improve your sleep quality."
+    },
+    {
+      "id": 19,
+      "title": "Sustainable Living",
+      "description": "Eco-friendly habits to reduce your environmental footprint."
+    },
+    {
+      "id": 20,
+      "title": "The Power of Storytelling",
+      "description": "How stories shape our culture and connect us as humans."
+    },
+    {
+      "id": 21,
+      "title": "Self-Care Strategies",
+      "description": "Ways to take care of your mental and physical health."
+    },
+    {
+      "id": 22,
+      "title": "Blockchain Explained",
+      "description": "An introduction to blockchain technology and its applications."
+    },
+    {
+      "id": 23,
+      "title": "The Art of Public Speaking",
+      "description": "Tips to overcome fear and deliver impactful speeches."
+    },
+    {
+      "id": 24,
+      "title": "Pet Care Essentials",
+      "description": "Basic tips to keep your pets happy and healthy."
+    },
+    {
+      "id": 25,
+      "title": "Writing Compelling Content",
+      "description": "How to create engaging content that captures attention."
+    },
+    {
+      "id": 26,
+      "title": "Learning a New Language",
+      "description": "Effective methods for mastering a second language."
+    },
+    {
+      "id": 27,
+      "title": "DIY Projects for Your Home",
+      "description": "Fun and creative do-it-yourself ideas for home improvement."
+    },
+    {
+      "id": 28,
+      "title": "The Evolution of Music",
+      "description": "A look at how music has changed over the decades."
+    },
+    {
+      "id": 29,
+      "title": "How to Meditate",
+      "description": "A beginner's guide to meditation for stress relief and focus."
+    },
+    {
+      "id": 30,
+      "title": "Cybersecurity Basics",
+      "description": "Steps to protect yourself online and keep your data safe."
     }
   ]
 }

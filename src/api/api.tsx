@@ -1,3 +1,4 @@
+import { Pagination } from "../components/Products";
 import axiosInstance from "./Interceptor";
 
 interface User {
@@ -37,4 +38,10 @@ export const deleteLocalUser = async (user_id: string) => {
     const response = await axiosInstance.delete(`/user/${user_id}`);
     console.log(response, "delete_response");
     return response.data;
+}
+
+export const fetchProducts = async ({ skip, limit }) => {
+    const response = await axiosInstance.get(`https://dummyjson.com/products?limit=${limit}&skip=${skip || 0}`)
+    return response?.data;
+
 }

@@ -15,7 +15,7 @@ const Layout = () => {
   return (
     <div className='overall-container'>
       <Header open={open} />
-      <Sidebar2 open={open} handleClick={handleSideBar} />
+      <Sidebar open={open} handleClick={handleSideBar} />
       <div className={!open ? 'content-container-open' : 'content-container'}>
         <Outlet context={{ open }} />
       </div>

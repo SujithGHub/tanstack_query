@@ -1,5 +1,6 @@
-import { QueryClient, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { deleteLocalUser, fetchAllUsersFromLocalServer, postLocalUser } from "../api/api";
+import { QueryClient, useInfiniteQuery, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { deleteLocalUser, fetchAllUsersFromLocalServer, fetchProducts, postLocalUser } from "../api/api";
+import { Pagination, Product } from "../components/Products";
 
 // export const GetUserQuery = () => {
 //     return useQuery({
@@ -51,7 +52,25 @@ export const deleteLocalUserQuery = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['delete-user'],
-        mutationFn: deleteLocalUser,
+        mutationFn: (id: string) => deleteLocalUser(id),
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ['local-user'] })
     })
 }
+
+export const fetchProductQuery = (pagination: Pagination) => {
+    return useQuery<Product>({
+        queryKey: ['products'],
+        queryFn: () => fetchProducts(pagination),
+        refetchOnWindowFocus: false
+    })
+}
+
+// export const fetchProductInfiniteQuery = (pagination: Pagination) => {
+//     return useInfiniteQuery({
+//         queryKey: ['products'],
+//         queryFn: () => fetchProducts(pagination),
+//         initialPageParam: 0,
+//         getNextPageParam: (lastPage, allPages) => lastPage.nextCursor,
+//         getPreviousPageParam: (firstPage, allPages) => firstPage.prevCursor
+//     })
+// }

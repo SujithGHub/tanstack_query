@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { deleteLocalUserQuery, fetchLocalUserQuery, postLocalUserQuery } from "../queries/Queries";
 
 interface User {
@@ -13,6 +13,7 @@ export const Users: React.FC = () => {
   const { data, isError, isFetching, isLoading } = fetchLocalUserQuery();
   const localUserMutation = postLocalUserQuery();
   const { isSuccess, mutate } = deleteLocalUserQuery();
+  const id = useId();
   const initialUser: User = {
     id: '',
     name: '',
@@ -21,6 +22,8 @@ export const Users: React.FC = () => {
   };
   const [localUser, setLocalUser] = useState(initialUser);
   const [users, setUsers] = useState<User[]>([]);
+
+  console.log(data, "data");
 
   useEffect(() => {
     if (data) {
@@ -53,40 +56,42 @@ export const Users: React.FC = () => {
 
   const addLocalUser = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    localUserMutation.mutate(localUser)
+    const addUser = { ...localUser, id: Date.now().toString() }
+    setLocalUser(addUser)
+    localUserMutation.mutate(addUser)
     setLocalUser(initialUser)
   }
 
-  const removeItem = (id: string) => {
-    mutate(id);
-    if (isSuccess) {
-      alert("Success Bro!!!")
-    }
+  const removeItem = (event: React.MouseEvent, id: string) => {
+    event.preventDefault();
+    return mutate(id);
   }
 
 
   return (
-    <form onSubmit={(event) => addLocalUser(event)} className="gap-3 flex items-center justify-center flex-col">
-      {isLoading && <div>Loading...</div>}
-      {isError && <div>Error...</div>}
-      {isFetching && <div>Fetching...</div>}
-      {users && users?.map((item: User, index: number) => {
-        return (
-          <div key={index} className="flex items-center w-56 justify-between gap-y-72">
-            <p>{item?.name} - {item?.age}</p>
-            <button className="outline-none border-none focus:outline-none" onClick={() => removeItem(item.id)}>-</button>
-          </div>
-        )
-      })}
+    <>
+      <form onSubmit={(event) => addLocalUser(event)} className="gap-3 flex items-center justify-center flex-col">
+        {isLoading && <div>Loading...</div>}
+        {isError && <div>Error...</div>}
+        {isFetching && <div>Fetching...</div>}
+        {users && users?.map((item: User, index: number) => {
+          return (
+            <div key={index} className="flex items-center w-56 justify-between gap-y-72">
+              <p>{item?.name} - {item?.age}</p>
+              <button type="button" className="outline-none border-none focus:outline-none" onClick={(event) => removeItem(event, item.id)}>-</button>
+            </div>
+          )
+        })}
 
-      <div className="flex flex-col gap-4">
-        <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="text" name="name" value={localUser?.name} onChange={handleChange} />
-        <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="number" name="age" onChange={handleChange} value={localUser?.age} />
-        <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="email" name="email" onChange={handleChange} value={localUser?.email} />
-        <button className="bg-slate-400 focus:outline-none text-white opacity-70 outline-none border-none transition-transform duration-150 hover:opacity-100 hover:scale-105 active:scale-95" type="submit">Add Local User</button>
+        <div className="flex flex-col gap-4">
+          <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="text" name="name" value={localUser?.name} onChange={handleChange} />
+          <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="number" name="age" onChange={handleChange} value={localUser?.age} />
+          <input className="h-10 border-2 border-red-600 p-3 rounded-md" type="email" name="email" onChange={handleChange} value={localUser?.email} />
+          <button className="bg-slate-400 focus:outline-none text-white opacity-70 outline-none border-none transition-transform duration-150 hover:opacity-100 hover:scale-105 active:scale-95" type="submit">Add Local User</button>
 
 
-      </div>
-    </form>
+        </div>
+      </form>
+    </>
   )
 }

@@ -12,6 +12,10 @@ import UseReducer from './hooks/UseReducer';
 import UseState from './hooks/UseState';
 import UseContext from './hooks/UseContext';
 import UseRef from './hooks/UseRef';
+import Folder from './practice/Folder';
+import Group from './practice/Group';
+import Community from './practice/Community';
+import Learn from './practice/Learn';
 
 
 const ProtectedRoute = ({ children }) => {
@@ -78,6 +82,30 @@ function App() {
             <Route path='/use-ref' element={
               <ProtectedRoute>
                 <UseRef />
+              </ProtectedRoute>
+            } />
+
+            <Route path='/folder' element={
+              <ProtectedRoute>
+                <Folder />
+              </ProtectedRoute>
+            } />
+
+            <Route path='/group' element={
+              <ProtectedRoute>
+                <Group />
+              </ProtectedRoute>
+            } />
+
+            <Route path='/community' element={
+              <ProtectedRoute>
+                <Community />
+              </ProtectedRoute>
+            } />
+
+            <Route path='/learn' element={
+              <ProtectedRoute>
+                <Learn />
               </ProtectedRoute>
             } />
 
