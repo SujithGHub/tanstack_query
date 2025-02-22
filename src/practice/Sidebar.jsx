@@ -1,6 +1,7 @@
 import React from 'react';
 import '../practice/Practice.css'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaFolderOpen } from 'react-icons/fa';
 
 const Sidebar = ({ open, handleClick }) => {
 
@@ -15,11 +16,15 @@ const Sidebar = ({ open, handleClick }) => {
       <button onClick={handleClick}>
         <i className="fa-solid fa-bars"></i>
       </button>
-      <button className={isActive('first') ? 'active-button' : ''} onClick={() => navigate('first')}>
+      <button title='Home' className={isActive('first') ? 'active-button' : ''} onClick={() => navigate('first')}>
         <i className="fa-solid fa-house"></i>
         {!open && <span>Home</span>}
       </button>
-      <button className={isActive('second') ? 'active-button' : ''} onClick={() => navigate('second')}>
+      <button title='Folder Component' className={isActive('folder') ? 'active-button' : ''} onClick={() => navigate('folder')}>
+        <FaFolderOpen style={{ width: '15px', height: '35px' }} />
+        {!open && <span>Folder Component</span>}
+      </button>
+      <button title='Folder Structure' className={isActive('second') ? 'active-button' : ''} onClick={() => navigate('second')}>
         <i className="fa-solid fa-user-secret"></i>
         {!open && <span>User</span>}
       </button>

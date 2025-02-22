@@ -16,6 +16,7 @@ import Folder from './practice/Folder';
 import Group from './practice/Group';
 import Community from './practice/Community';
 import Learn from './practice/Learn';
+import FolderComponent from './components/FolderComponent';
 
 
 const ProtectedRoute = ({ children }) => {
@@ -50,7 +51,11 @@ function App() {
                 <FirstComponent />
               </ProtectedRoute>
             } />
-
+            <Route path='/folder' element={
+              <ProtectedRoute>
+                <FolderComponent />
+              </ProtectedRoute>
+            } />
             <Route path='/second' element={
               <ProtectedRoute>
                 <SecondComponent />

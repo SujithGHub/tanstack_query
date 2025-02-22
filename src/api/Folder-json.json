@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "name": "public",
+    "isFolder": true,
+    "children": [
+      {
+        "id": "2",
+        "name": "logo.png",
+        "isFolder": false
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "src",
+    "isFolder": true,
+    "children": [
+      {
+        "id": "4",
+        "name": "App.jsx",
+        "isFolder": false,
+        "children": []
+      },
+      {
+        "id": "5",
+        "name": "api",
+        "isFolder": true,
+        "children": []
+      },
+      {
+        "id": "6",
+        "name": "components",
+        "isFolder": true,
+        "children": [
+          {
+            "id": "7",
+            "name": "Product.jsx",
+            "isFolder": false,
+            "children": []
+          },
+          {
+            "id": "8",
+            "name": "Users.jsx",
+            "isFolder": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "name": "hooks",
+        "isFolder": true,
+        "children": []
+      }
+    ]
+  }
+]
