@@ -20,7 +20,7 @@ const FirstComponent = () => {
     // <Products />
     <form onSubmit={(event) => handleSubmit(event)}>
       <input required className='border-red-200 h-8 border-2' value={course?.name || ''} type="text" name="name" id="course-name" onChange={(event) => setCourse(prev => ({ ...prev, name: event?.target?.value }))} />
-      <button type="submit">Add Course</button>
+      <button className='button-normal' type="submit">Add Course</button>
       {courses.map((course, index) => (
         <div key={index} className='flex gap-3' >
           <h2 className='w-1/4 whitespace-nowrap'>{course?.name}</h2>

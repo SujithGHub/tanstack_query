@@ -90,11 +90,11 @@ function App() {
               </ProtectedRoute>
             } />
 
-            <Route path='/folder' element={
+            {/* <Route path='/folder' element={
               <ProtectedRoute>
                 <Folder />
               </ProtectedRoute>
-            } />
+            } /> */}
 
             <Route path='/group' element={
               <ProtectedRoute>

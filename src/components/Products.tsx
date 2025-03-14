@@ -45,8 +45,8 @@ function Products() {
         }
       </div>
       <div className='flex items-center justify-center'>
-        <button disabled={false} onClick={() => setPagination(prev => ({ ...prev, skip: prev.skip - prev.limit, limit: 10 }))}>Prev</button>
-        <button onClick={() => setPagination(prev => ({ ...prev, skip: prev.skip + prev.limit, limit: 10 }))}>Next</button>
+        <button className='button-normal' disabled={false} onClick={() => setPagination(prev => ({ ...prev, skip: prev.skip - prev.limit, limit: 10 }))}>Prev</button>
+        <button className='button-normal' onClick={() => setPagination(prev => ({ ...prev, skip: prev.skip + prev.limit, limit: 10 }))}>Next</button>
       </div>
     </div >
   )

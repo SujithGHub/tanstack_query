@@ -68,8 +68,8 @@ const UseReducer = () => {
   return (
     <div>
       <div className='flex items-center justify-center flex-row gap-4 bg-black py-5'>
-        <button onClick={() => dispatch({ type: 'increment', key: '' })}>+</button>
-        <button onClick={() => dispatch({ type: 'decrement', key: '' })}>-</button>
+        <button className='button-normal' onClick={() => dispatch({ type: 'increment', key: '' })}>+</button>
+        <button className='button-normal' onClick={() => dispatch({ type: 'decrement', key: '' })}>-</button>
       </div>
       <div className='flex items-center focus:outline-none px-3 h-10'>
         <input ref={inputRef}
@@ -93,7 +93,7 @@ const UseReducer = () => {
           value={state.user.password}
           onChange={(event) => dispatch({ type: 'form-input', key: 'password', payload: event.target.value })}
         ></input>
-        <button type='submit'>{isPending ? 'Submitting' : 'Submit Form'}</button>
+        <button className='button-normal' type='submit'>{isPending ? 'Submitting' : 'Submit Form'}</button>
       </form>
 
 

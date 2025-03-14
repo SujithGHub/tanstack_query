@@ -53,7 +53,7 @@ const UseState: React.FC<any> = () => {
 
       <p>Count: {count}</p>
 
-      <button onClick={handleClick}>Add Value</button>
+      <button className='button-normal' onClick={handleClick}>Add Value</button>
       UseState</div>
   )
 }

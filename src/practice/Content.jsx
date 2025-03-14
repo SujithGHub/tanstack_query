@@ -10,7 +10,7 @@ const Content = () => {
   return (
     <div>
       <h2>Content</h2>
-      <button onClick={() => navigate('/first')}>First Component</button>
+      <button className='button-normal' onClick={() => navigate('/first')}>First Component</button>
     </div>
   )
 }
