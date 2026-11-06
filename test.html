@@ -1,0 +1,240 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approved Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    table {
+      width: 90%;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 16px;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    th,
+    td {
+      padding: 10px 15px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    thead {
+      display: table-header-group;
+      margin-top: 20px;
+    }
+
+    caption {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    .company_name {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .table-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .header-div {
+      display: flex;
+      gap: 10px;
+    }
+
+    .header-label {
+      width: 7rem;
+      text-align: left;
+    }
+
+    .label-value {
+      width: 10rem;
+      text-align: left;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    .footer-value {
+      width: 5rem;
+      text-align: left;
+    }
+
+    @media print {
+      @page {
+        margin-top: 15mm;
+      }
+
+      thead {
+        margin-top: 20px;
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      header {
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="company_name">
+    <h1>
+      Jeyachandran Textiles, Chennai.
+    </h1>
+  </div>
+  <div>
+    <header>
+      <div>
+        <div class="header-div">
+          <label class="header-label">
+            Season
+          </label>
+          <h4 class="label-value">SUMMER2025</h4>
+        </div>
+        <div class="header-div">
+          <label class="header-label">
+            Selection ID
+          </label>
+          <h4 class="label-value">FV-AX-82389281928</h4>
+        </div>
+        <div class="header-div">
+          <label class="header-label">
+            Selection Date
+          </label>
+          <h4 class="label-value">26/02/2001</h4>
+        </div>
+      </div>
+      <div>
+        <div class="header-div">
+          <label class="header-label">
+            Buyer
+          </label>
+          <h4 class="label-value">Monesh</h4>
+        </div>
+        <div class="header-div">
+          <label class="header-label">
+            Vendor
+          </label>
+          <h4 class="label-value">360 Traders</h4>
+        </div>
+        <div class="header-div">
+          <label class="header-label">
+            Vendor City
+          </label>
+          <h4 class="label-value">Mumbai</h4>
+        </div>
+      </div>
+
+    </header>
+    <div class="table-container">
+      <table>
+        <caption>Selection Details</caption>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Article Name</th>
+            <th>Variant Name</th>
+            <th>Sub Cat Name</th>
+            <th>Brand Name</th>
+            <th>Fashion/Basic</th>
+            <th>Season</th>
+            <th>EANCode</th>
+            <th>HSNCode</th>
+            <th>UOM</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Pattern</th>
+            <th>Fabric</th>
+            <th>Cost Price</th>
+            <th>Selling Price</th>
+            <th>MRP</th>
+            <th>Tax</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>product.articleName</td>
+            <td>product.variantName</td>
+            <td>product.subCategory.name</td>
+            <td>product.brand.value</td>
+            <td>product.supplierStyleCode</td>
+            <td>product.companyStyleCode</td>
+            <td>product.eancode</td>
+            <td>product.hsncode</td>
+            <td>product.season.name</td>
+            <td>sizeVariant</td>
+            <td>colorVariant</td>
+            <td>patternVariant</td>
+            <td>FabricVariant</td>
+            <td>costPrice</td>
+            <td>sellingPrice</td>
+            <td>mrp</td>
+            <td>tax</td>
+            <td>quantity</td>
+            <td>product.costPrice * product.quantity</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="footer">
+      <div class="header-div">
+        <label class="header-label">Total Amount:</label>
+        <h4 class="footer-value">5000</h4>
+      </div>
+      <div class="header-div">
+        <label class="header-label">Total Qty:</label>
+        <h4 class="footer-value">50</h4>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

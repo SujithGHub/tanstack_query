@@ -40,7 +40,7 @@ export const deleteLocalUser = async (user_id: string) => {
     return response.data;
 }
 
-export const fetchProducts = async ({ skip, limit }) => {
+export const fetchProducts = async ({ skip, limit }:any) => {
     const response = await axiosInstance.get(`https://dummyjson.com/products?limit=${limit}&skip=${skip || 0}`)
     return response?.data;
 

@@ -7,6 +7,7 @@ const FolderComponent = () => {
   const [isExpanded, setIsExpanded] = useState({});
 
 
+
   const makeChildrenCollapse = (children) => {
     let collapsedObj = {};
     children.forEach((child) => {
@@ -35,6 +36,8 @@ const FolderComponent = () => {
         handleExpandToggle={handleExpandToggle}
         setFolderData={setFolderData}
       />
+      <button onClick={fetchPost}>Fetch Post</button>
+
     </div>
   );
 };

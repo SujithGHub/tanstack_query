@@ -17,7 +17,8 @@ import Group from './practice/Group';
 import Community from './practice/Community';
 import Learn from './practice/Learn';
 import FolderComponent from './components/FolderComponent';
-
+import Chips from './practice/Chips';
+import TypingTest from './practice/TypingTest';
 
 const ProtectedRoute = ({ children }) => {
 
@@ -44,6 +45,11 @@ function App() {
             <Route path='/practice' element={
               <ProtectedRoute>
                 <Content />
+              </ProtectedRoute>
+            } />
+            <Route path='/chips' element={
+              <ProtectedRoute>
+                <Chips />
               </ProtectedRoute>
             } />
             <Route path='/first' element={
@@ -111,6 +117,12 @@ function App() {
             <Route path='/learn' element={
               <ProtectedRoute>
                 <Learn />
+              </ProtectedRoute>
+            } />
+
+            <Route path='/typing-test' element={
+              <ProtectedRoute>
+                <TypingTest />
               </ProtectedRoute>
             } />
 

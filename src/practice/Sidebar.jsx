@@ -20,9 +20,14 @@ const Sidebar = ({ open, handleClick }) => {
         <i className="fa-solid fa-house"></i>
         {!open && <span>Home</span>}
       </button>
+      <button title='Chips' className={isActive('chips') ? 'active-button' : ''} onClick={() => navigate('chips')}>
+        <i class="fa-solid fa-layer-group"></i>
+        {!open && <span>Chips</span>}
+      </button>
       <button title='Folder Component' className={isActive('folder') ? 'active-button' : ''} onClick={() => navigate('folder')}>
-        <FaFolderOpen style={{ width: '15px', height: '35px' }} />
-        {!open && <span>Folder Component</span>}
+        {/* <FaFolderOpen style={{ width: '15px', height: '35px' }} /> */}
+        <i className="fa-solid fa-user-secret"></i>
+        {!open && <span>Folder</span>}
       </button>
       <button title='Folder Structure' className={isActive('second') ? 'active-button' : ''} onClick={() => navigate('second')}>
         <i className="fa-solid fa-user-secret"></i>
@@ -51,6 +56,14 @@ const Sidebar = ({ open, handleClick }) => {
       <button className={isActive('use-ref') ? 'active-button' : ''} onClick={() => navigate('use-ref')}>
         <i className="fa-brands fa-contao"></i>
         {!open && <span>Use Ref</span>}
+      </button>
+      <button className={isActive('worker') ? 'active-button' : ''} onClick={() => navigate('worker')}>
+        <i class="fa-solid fa-user-nurse"></i>
+        {!open && <span>Worker</span>}
+      </button>
+      <button className={isActive('typing-test') ? 'active-button' : ''} onClick={() => navigate('typing-test')}>
+        <i class="fa-solid fa-keyboard"></i>
+        {!open && <span>Typing Test</span>}
       </button>
     </div>
   )
